@@ -1,21 +1,28 @@
 package com.bridge.moodanalysisproblem;
 
 public class MoodAnalysisProblem {
-    String message;
+    private String message;
 
     public MoodAnalysisProblem(String message) {
+
         this.message = message;
     }
 
     public String moodAnalysis() throws MoodAnalysisException {
         try {
-            if (this.message.toLowerCase().contains("sad")) {
-                return "sad";
-            } else {
-                return "happy";
+            if(this.message.length()==0){
+                throw new MoodAnalysisException("Invalid mood", MoodAnalysisException.ExceptionType.EMPTY);
             }
-        } catch (NullPointerException e) {
+            if (this.message.toLowerCase().contains("sad"))
+                return "sad";
             return "happy";
         }
+        catch (NullPointerException e){
+            throw new MoodAnalysisException("Invalid mood", MoodAnalysisException.ExceptionType.NULL);
+
+        }
+
+
+
     }
 }

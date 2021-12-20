@@ -13,8 +13,4 @@ public class MoodAnalysisException extends Exception {
         this.message = message;
         this.exceptionType = exceptionType;
     }
-
-    public MoodAnalysisException(String message) {
-        this.message = message;
-    }
 }
