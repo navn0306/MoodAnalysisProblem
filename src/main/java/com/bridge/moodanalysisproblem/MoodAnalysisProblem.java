@@ -9,9 +9,6 @@ public class MoodAnalysisProblem {
 
     public String moodAnalysis() throws MoodAnalysisException {
         try {
-            if (this.message.length() == 0) {
-                throw new MoodAnalysisException("Invalid mood", MoodAnalysisException.ExceptionType.EMPTY);
-            }
             if (this.message.toLowerCase().contains("sad")) {
                 return "sad";
             } else {
